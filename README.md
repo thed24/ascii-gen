@@ -35,9 +35,12 @@ ascii-gen --file path/to/your/image.jpg --width 120 --height 60
 ![Input](./examples/duck.jpg "Input")
 
 
-### Output
-Note the modified width and height squashes the image a bit!
+### Output (Small)
 ![Output](./examples/duck-ascii.png "Output")
+
+### Output (Large)
+![Output Large](./examples/duck-ascii-zoomed.png "Output Large")
+
 
 ## Dependencies
 
