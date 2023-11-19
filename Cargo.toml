@@ -1,0 +1,16 @@
+[package]
+name = "ascii-gen"
+version = "1.0.0"
+edition = "2021"
+authors = ["thed24"]
+license = "MIT"
+description = "A command line tool to generate ascii art from images"
+readme = "README.md"
+homepage = "https://github.com/thed24/ascii-gen"
+repository = "https://github.com/thed24/ascii-gen"
+keywords = ["cli", "ascii", "art", "image", "generator"]
+categories = ["command-line-utilities"]
+
+[dependencies]
+clap = { version = "4.4.8", features = ["derive"] }
+image = "0.24.7"
