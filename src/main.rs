@@ -30,7 +30,9 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             let image = ImageReader::open(file)?.decode()?;
             let converter = converter::ImageConverter::new(image);
             let options = converter::AsciiOptions::new(args.width, args.height);
+
             println!("{}", converter.to_ascii_art(Some(options)));
+            println!("Image converted successfully!");
 
             Ok(())
         },

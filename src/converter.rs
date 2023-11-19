@@ -1,39 +1,43 @@
 use image::{DynamicImage, GenericImageView, Pixel};
 
-// Options
+/// Options for the ASCII art conversion.
 pub struct AsciiOptions {
     width: u32,
     height: u32,
 }
 
+/// Default implementation for the ASCII art conversion options.
 impl AsciiOptions {
     pub fn new(width: u32, height: u32) -> Self {
         Self { width, height }
     }
 }
 
+/// Default implementation for the ASCII art conversion options.
 impl Default for AsciiOptions {
     fn default() -> Self {
         Self::new(80, 80)
     }
 }
 
-// Trait
+/// Trait for converting something generically to ASCII art.
 pub trait ToAsciiArt {
     fn to_ascii_art(&self, options: Option<AsciiOptions>) -> String;
 }
 
-// Image Implementation
+/// Implementation for converting an image to ASCII art.
 pub struct ImageConverter {
     image: DynamicImage,
 }
 
+/// Implementation for converting an image to ASCII art.
 impl ImageConverter {
     pub fn new(image: DynamicImage) -> Self {
         Self { image }
     }
 }
 
+/// Implementation for converting an image to ASCII art.
 impl ToAsciiArt for ImageConverter {
     fn to_ascii_art(&self, options: Option<AsciiOptions>) -> String {
         let options = options.unwrap_or_default();

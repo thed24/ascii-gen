@@ -1,29 +1,21 @@
-```
 # Rust ASCII Art Converter
 
 This Rust tool converts images into ASCII art. It takes an image file as input, resizes it according to specified width and height parameters, and then converts the image into ASCII characters.
 
 ## Installation
 
-Clone the repository and navigate to the project directory:
+Use cargo to quickly and easily install ascii-gen:
 
 ```bash
-git clone https://github.com/your_username/rust_ascii_converter.git
-cd rust_ascii_converter
-```
-
-Build the project using `cargo`:
-
-```bash
-cargo build --release
+cargo install ascii-gen
 ```
 
 ## Usage
 
-Run the compiled binary with the path to an image file:
+Run the tool:
 
 ```bash
-./target/release/rust_ascii_converter --file path/to/your/image.jpg
+ascii-gen --file path/to/your/image.jpg
 ```
 
 Optional parameters:
@@ -34,7 +26,7 @@ Optional parameters:
 Example:
 
 ```bash
-./target/release/rust_ascii_converter --file path/to/your/image.jpg --width 120 --height 60
+ascii-gen --file path/to/your/image.jpg --width 120 --height 60
 ```
 
 ## Dependencies
