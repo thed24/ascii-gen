@@ -29,6 +29,15 @@ Example:
 ascii-gen --file path/to/your/image.jpg --width 120 --height 60
 ```
 
+## Examples
+
+### Input
+![Input](./examples/duck.jpg "Input")
+
+
+### Output
+![Output](./examples/duck-ascii.png "Output")
+
 ## Dependencies
 
 - [`clap`](https://docs.rs/clap/) - Command-line argument parser for Rust.
