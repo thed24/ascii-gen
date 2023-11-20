@@ -20,13 +20,19 @@ ascii-gen --file path/to/your/image.jpg
 
 Optional parameters:
 
-- `--width`: Set the width of the output (default: 80).
-- `--height`: Set the height of the output (default: 80).
+- `--width`: Set the width of the output (default: 80)
+- `--height`: Set the height of the output (default: 80)
+- `--gamma`: Set the gamma of the ASCII art (default: 1.0)
+- `--live`: Enable live editing of the ASCII art (default: false)
 
-Example:
+Examples:
 
 ```bash
 ascii-gen --file path/to/your/image.jpg --width 120 --height 60
+```
+
+```bash
+ascii-gen --file path/to/your/image.jpg --width 120 --height 60 --live
 ```
 
 ## Examples
@@ -34,18 +40,18 @@ ascii-gen --file path/to/your/image.jpg --width 120 --height 60
 ### Input
 ![Input](./examples/duck.jpg "Input")
 
-
 ### Output (Small)
 ![Output](./examples/duck-ascii.png "Output")
 
 ### Output (Large)
 ![Output Large](./examples/duck-ascii-zoomed.png "Output Large")
 
-
 ## Dependencies
 
 - [`clap`](https://docs.rs/clap/) - Command-line argument parser for Rust.
 - [`image`](https://docs.rs/image/) - Image processing library for Rust.
+- [`crossterm`](https://docs.rs/crossterm/) - Cross-platform terminal manipulation library for Rust.
+- [`ratatui`](https://docs.rs/ratatui/) - TUI (Text-based User Interface) library for Rust.
 
 ## License
 

@@ -1,6 +1,6 @@
 [package]
 name = "ascii-gen"
-version = "1.0.1"
+version = "1.1.0"
 edition = "2021"
 authors = ["thed24"]
 license = "MIT"
@@ -13,4 +13,6 @@ categories = ["command-line-utilities"]
 
 [dependencies]
 clap = { version = "4.4.8", features = ["derive"] }
+crossterm = "0.27.0"
 image = "0.24.7"
+ratatui = "0.24.0"

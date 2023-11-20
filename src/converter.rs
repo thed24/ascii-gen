@@ -4,19 +4,20 @@ use image::{DynamicImage, GenericImageView, Pixel};
 pub struct AsciiOptions {
     width: u32,
     height: u32,
+    gamma: f32,
 }
 
 /// Default implementation for the ASCII art conversion options.
 impl AsciiOptions {
-    pub fn new(width: u32, height: u32) -> Self {
-        Self { width, height }
+    pub fn new(width: u32, height: u32, gamma: f32) -> Self {
+        Self { width, height, gamma }
     }
 }
 
 /// Default implementation for the ASCII art conversion options.
 impl Default for AsciiOptions {
     fn default() -> Self {
-        Self::new(80, 80)
+        Self::new(80, 80, 1.0)
     }
 }
 
@@ -44,6 +45,7 @@ impl ToAsciiArt for ImageConverter {
 
         let target_width = options.width;
         let target_height = options.height;
+        let gamma = options.gamma;
 
         let width_ratio = self.image.width() as f32 / target_width as f32;
         let height_ratio = self.image.height() as f32 / target_height as f32;
@@ -74,7 +76,9 @@ impl ToAsciiArt for ImageConverter {
                 let avg_g = (total_g / count) as u8;
                 let avg_b = (total_b / count) as u8;
 
-                let luminance = (0.2126 * avg_r as f32 + 0.7152 * avg_g as f32 + 0.0722 * avg_b as f32) as u8;
+                let base_luminance = (0.2126 * avg_r as f32 + 0.7152 * avg_g as f32 + 0.0722 * avg_b as f32) as u8;
+                let luminance = ((base_luminance as f32 / 255.0).powf(gamma) * 255.0) as u8;
+
                 let character = match luminance {
                     0..=31 => '#',
                     32..=63 => '@',
